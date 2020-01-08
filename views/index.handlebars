@@ -1,29 +1,33 @@
-<header>
-	<h1>Eat the Burger!</h1>
-</header><!-- /header -->
-
-<div class="wrapper">
+<div class="jumbotron text-center">
+	<img src="/assets/images/burgerpic.png" alt="burger" style="width: 130px; height: 100px;"/>
+	<h1>Burger Tracker</h1>
+	<p class="description">(Keep track of all the different types of burgers you've tried)</p>
+	<p class="instructions">Use the button below to create a burger you haven't eaten yet.</p>
+	<p class="instructions2">Once you go out and eat that burger, mark it off to save it as eaten.</p>
 	<div id="create-burger">
 		<form action="/" method="POST">
 			<input id="burger-name" type="text" name="burger_name" placeholder="Create a burger">
 			<button id="submit-btn" type="submit">Create Burger!</button>
 		</form>
 	</div>
+</div>
 
-	<section id="burgers-container">
-		<div id="burgers-available">
-			<h2>Burgers Available</h2>
+<div class="wrapper container text-center">
+	<div class="row">
+		<div id="burgers-available" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-5">
+			<h2>Burgers Not Yet Tried</h2>
 			{{#each burgers}}
 				{{#unless this.devoured}}
 				  <div class="burger">
 				    <form class="devour-burger-form" action="/" method="POST">
-				  		{{burger_name}} <span>#{{id}}</span> <button class="eat-btn">EAT</button>
+				  		{{burger_name}} <span>#{{id}}</span> <button class="eat-btn">MARK AS CONSUMED</button>
 				    </form>
 				  </div>
 				{{/unless}}
 			{{/each}}
 		</div>
-		<div id="burgers-devoured">
+		
+		<div id="burgers-devoured" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 			<h2>Burgers Eaten</h2>
 			{{#each burgers}}
 				{{#if this.devoured}}
@@ -31,5 +35,5 @@
 				{{/if}}
 			{{/each}}
 		</div>
-	</section>
+	</div>
 </div>

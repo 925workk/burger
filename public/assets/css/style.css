@@ -1,0 +1,29 @@
+.jumbotron {
+    background-color: #f9e6a8;
+    border-bottom: black solid 1px;
+}
+
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #f9e6a8;
+}
+
+.description{
+    font-size: 14px;
+    position: relative;
+    bottom: 10px;
+}
+
+.instructions{
+    line-height: 2px;
+    font-size: 20px;
+}
+
+.instructions2{
+    line-height: 2px;
+    font-size: 20px;
+}
+
+#burger-name{
+    width: 300px;
+}
