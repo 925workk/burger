@@ -3,6 +3,10 @@
     border-bottom: black solid 1px;
 }
 
+p{
+    font-size: 20px;
+}
+
 body{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: #f9e6a8;
@@ -15,15 +19,31 @@ body{
 }
 
 .instructions{
-    line-height: 2px;
     font-size: 20px;
 }
 
-.instructions2{
-    line-height: 2px;
+strong{
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+label{
     font-size: 20px;
+}
+
+span{
+    font-size: 24px;
 }
 
 #burger-name{
     width: 300px;
+}
+
+.btn{
+    position: relative;
+    bottom: 3px;
+    border: black 1px solid;
+    margin-left: 10px;
+    padding: 4px;
+    font-size: 14px;
 }

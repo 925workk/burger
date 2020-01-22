@@ -1,39 +1,65 @@
-<div class="jumbotron text-center">
-	<img src="/assets/images/burgerpic.png" alt="burger" style="width: 130px; height: 100px;"/>
-	<h1>Burger Tracker</h1>
-	<p class="description">(Keep track of all the different types of burgers you've tried)</p>
-	<p class="instructions">Use the button below to create a burger you haven't eaten yet.</p>
-	<p class="instructions2">Once you go out and eat that burger, mark it off to save it as eaten.</p>
-	<div id="create-burger">
-		<form action="/" method="POST">
-			<input id="burger-name" type="text" name="burger_name" placeholder="Create a burger">
-			<button id="submit-btn" type="submit">Create Burger!</button>
-		</form>
-	</div>
-</div>
 
-<div class="wrapper container text-center">
-	<div class="row">
-		<div id="burgers-available" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-5">
-			<h2>Burgers Not Yet Tried</h2>
-			{{#each burgers}}
-				{{#unless this.devoured}}
-				  <div class="burger">
-				    <form class="devour-burger-form" action="/" method="POST">
-				  		{{burger_name}} <span>#{{id}}</span> <button class="eat-btn">MARK AS CONSUMED</button>
-				    </form>
-				  </div>
-				{{/unless}}
-			{{/each}}
-		</div>
-		
-		<div id="burgers-devoured" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-			<h2>Burgers Eaten</h2>
-			{{#each burgers}}
-				{{#if this.devoured}}
-				  <div class="burger">{{burger_name}} <span>#{{id}}</span></div>
-				{{/if}}
-			{{/each}}
-		</div>
-	</div>
-</div>
+    <div class="jumbotron text-center">
+        <img src="/assets/images/burgerpic.png" alt="burger" style="width: 130px; height: 100px;"/>
+        <h1>Burger Tracker</h1>
+	    <p class="description">(Keep track of all the different types of burgers you've tried)</p>
+	    <p class="instructions">Use the button below to create a burger you haven't tried, mark it off to save it as eaten.</p>
+        <br>
+            <form class="create-form">
+                <div class="form">
+                    <label for="newburger">Enter Burger Name</label>
+                    <input type="text" id="newburger" name="burger">
+                    <button type="submit-btn" id="addburger">
+                        Create Burger!
+                    </button>
+                </div>
+            </form>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="leftside"><strong>Burgers Not Yet Tried</strong>
+                    <p>Use the "Create Burger" button to add to this list.</p>
+                </div>
+                <div class="panel-body">
+
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+
+                        <span>{{this.burger_name}} -</span>
+                        <button type="button" class="eatburger btn btn-light" id="eatbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}">MARK AS CONSUMED</button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="rightside"><strong>Burgers Eaten</strong>
+                    <p>You can delete a burger if you accidentally marked it as eaten.</p>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <span>{{this.burger_name}} -</span>
+                        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}">DELETE</button>
+                        <hr>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

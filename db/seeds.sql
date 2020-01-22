@@ -1,9 +1,10 @@
+USE burgers_db;
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("Jr Bacon Burger", 0);
+VALUES ("Jr Bacon Burger", false);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("Big Mac", 0);
+VALUES ("Big Mac", false);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("Whopper", 0);
+VALUES ("Whopper", false);
 
