@@ -2,7 +2,7 @@
 
 ---
 ### Burger Tracker
-Keep track of the burgers that you want to eat and burgers that you have eaten. Use the "Create Burger!" button to create a burger you haven't tried, mark it off to save it as eaten.
+[Click here for live site.](https://evening-crag-31415.herokuapp.com/) Keep track of the burgers that you want to eat and burgers that you have eaten. Use the "Create Burger!" button to create a burger you haven't tried, mark it off to save it as eaten.
 
 ---
 ### Project Goals
